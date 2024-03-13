@@ -2,12 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-  import { Zenitho } from "uvcanvas"
-  import { Novatrix } from "uvcanvas"
-  import { Velustro } from "uvcanvas"
-  import { Lumiflex } from "uvcanvas"
+  
   import { Tranquiluxe } from "uvcanvas"
-  import { Opulento } from "uvcanvas"
+import Users from './components/Users';
 
 function App() {
   const [modeMusic, setModeMusic] = useState(false)
@@ -24,12 +21,10 @@ function App() {
   return (
     <>
     <div className='bg-black'>
-    <div className={`${modeMusic?'w-[75%]':'w-screen'} bg-red-900 min-h-screen transition-all duration-700 `}>
+    <div className={`${modeMusic?'w-[75%]':'w-screen'} bg-red-900 min-h-screen transition-all duration-700 flex flex-col p-5 gap-5 `}>
         <button onClick={handleModeMusic}  className='ml-[600px]'>abrir</button>
-        <div className='bg-green-500 w-[90%]'>contenido</div>
-        <div className='bg-green-500 w-[90%]'>contenido</div>
-        <div className='bg-green-500 w-[90%]'>contenido</div>
-
+        
+    <Users /> 
        
     </div>
     <div className={`${modeMusic?'translate-x-[0%]':'translate-x-[100%]'} fixed right-0 top-0 w-[25%] bg-red-400
