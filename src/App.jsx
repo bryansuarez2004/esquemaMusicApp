@@ -6,6 +6,7 @@ import 'react-h5-audio-player/lib/styles.css';
   import { Tranquiluxe } from "uvcanvas"
 import axios from 'axios';
 import Track from './components/Track';
+import Favorite from './components/Favorite';
 
 function App() {
   const [modeMusic, setModeMusic] = useState(false)
@@ -36,13 +37,13 @@ function App() {
             <div className='bg-red-400'>Home</div>
             <div className='bg-red-950 grow'>Playlists</div>
 
-            <div className='bg-red-900 grow'>Favourite tracks </div>
+            <div className='bg-red-900 grow'><Favorite/></div>
          </div>
          <div className='bg-gray-600 grid grid-rows-[10%,90%] '>
  <button onClick={handleModeMusic} className='bg-sky-400'>abrir</button>
-  <div className='bg-yellow-500 flex  flex-col items-center'>
+  <div className='bg-yellow-500 grid '>
     {tracks.map((track)=>{
-      return <Track key={track.id} track={track}/>
+      return <Track key={track.id} track={track} add setTracks={setTracks}/>
     })}
   </div>
 
